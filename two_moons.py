@@ -113,6 +113,7 @@ def calc_gradient_penalty(x, y_pred):
 
     # Two sided penalty
     gradient_penalty = ((grad_norm - 1) ** 2).mean()
+    # does not match eq.7 in paper, in which (grad_norm**2-1)**2
 
     # One sided penalty - down
     #     gradient_penalty = F.relu(grad_norm - 1).mean()
